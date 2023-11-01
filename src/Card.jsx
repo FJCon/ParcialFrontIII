@@ -1,5 +1,8 @@
-export const Card = ()=>{
+export const Card = ({user, password})=>{
     return(
-        <div>Hola, soy una tarjeta</div>
+        <>
+            <h2>Hola, {user}</h2>
+            <p>la contraseña que ingresaste es: {password}</p>
+        </>
     )
 }
