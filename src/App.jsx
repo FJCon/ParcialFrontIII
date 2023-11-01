@@ -37,7 +37,10 @@ const validarPass = (pass)=>{
 const onSubmitForm = (e)=>{
   e.preventDefault()
   console.log(user + ' '+password)
-  if(validarUser(user) && validarPass(password)){
+const usuarioValidado = validarUser(user)
+const passValidado = validarPass(password)
+
+  if( usuarioValidado && passValidado){
     setCard(<Card usuario={user} contrasenia={password}/>)
   }else{
     setCard(<Error />)
