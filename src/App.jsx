@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import './App.css'
 import { Card } from './Card.jsx'
+import {Error} from './Error.jsx'
 
 const [user, setUser] = useState('')
 const [password, setPassword] = useState('')
@@ -36,10 +37,12 @@ const validarPass = (pass)=>{
 const onSubmitForm = (e)=>{
   e.preventDefault()
   console.log(user + ' '+password)
-
   if(validarUser(user) && validarPass(password)){
-    setCard('valido')
+    setCard(<Card usuario={user} contrasenia={password}/>)
+  }else{
+    setCard(<Error />)
   }
+
 }
 
 
@@ -54,8 +57,6 @@ function App() {
         <input type="text" placeholder='Ingrese su contraseña' value={password} onChange={getPassword}/>
         <button>Enviar</button>
       </form>
-      <div>{card}</div>
-      <Card />
     </div>
   )
 }
