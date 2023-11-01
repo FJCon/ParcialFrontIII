@@ -4,6 +4,7 @@ import './App.css'
 import { Card } from './Card.jsx'
 import {Error} from './Error.jsx'
 
+function App() {
 const [user, setUser] = useState('')
 const [password, setPassword] = useState('')
 const [card , setCard] = useState('')
@@ -50,7 +51,7 @@ const passValidado = validarPass(password)
 
 
 
-function App() {
+
 
   return (
     <div className='App'>
@@ -60,6 +61,7 @@ function App() {
         <input type="text" placeholder='Ingrese su contraseña' value={password} onChange={getPassword}/>
         <button>Enviar</button>
       </form>
+      <div>{card}</div>
     </div>
   )
 }
